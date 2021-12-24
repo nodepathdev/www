@@ -1,0 +1,6 @@
+logo_image: /images/svg/nav-logo.svg
+background_image:
+navigation_items:
+  - label:
+    link_url:
+    link_type:

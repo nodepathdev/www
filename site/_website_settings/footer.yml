@@ -1,0 +1,41 @@
+link_columns:
+  - label: Primary
+    heading:
+    links:
+      - link_label: >-
+          The Sheep Vote is a non-profit organisation started in 2005 by the
+          great shepard, Wooly McBaa.
+        link_url:
+        icon_image:
+        open_in_new_tab: false
+  - label: Secondary
+    heading:
+    links:
+      - link_label: '123 Example Street, City '
+        link_url: https://www.google.com/maps/place/123+Example+Street%2C+City
+        icon_image: /images/svg/location.svg
+        open_in_new_tab: false
+      - link_label: 'donate@yourwebsite.com '
+        link_url: 'mailto:donate@yourwebsite.com '
+        icon_image: /images/svg/email.svg
+        open_in_new_tab: false
+      - link_label: '+1 123 456 7891 '
+        link_url: 'tel:+1 123 456 7891 '
+        icon_image: /images/svg/phone.svg
+        open_in_new_tab: false
+  - label: Social
+    heading:
+    links:
+      - link_label: Facebook
+        link_url: https://facebook.com/cloudcannon/
+        icon_image: /images/svg/facebook.svg
+        open_in_new_tab: false
+      - link_label: Twitter
+        link_url: https://twitter.com/cloudcannon/
+        icon_image: /images/svg/twitter.svg
+        open_in_new_tab: false
+      - link_label: Youtube
+        link_url: https://youtube.com/cloudcannon/
+        icon_image: /images/svg/youtube.svg
+        open_in_new_tab: false
+lower_text_html: <p><a href="https://cloudcannon.com/">Template by CloudCannon </a></p>
