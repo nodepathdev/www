@@ -12,7 +12,7 @@
 	<div class="{{c}}__inner-wrapper">
 		{% if nav.logo_image %}
 			<a href="/">
-				<img src="{{ nav.logo_image }}" alt="{{ site.data.general_settings.website_name }}" />
+				<img class="logo" src="{{ nav.logo_image }}" alt="{{ site.data.general_settings.website_name }}" />
 			</a>
 		{% endif %}
 		<h1 class="{{c}}__title"><a href="/">{{ site.data.general_settings.website_name }}</a></h1>
@@ -45,7 +45,7 @@
 <script>
 	const navToggle = document.getElementById('js-mobile-toggle');
 	const nav = document.getElementById('js-nav');
-	
+
 	function toggleNav() {
 		nav.classList.toggle('c-navigation--open');
 	}
