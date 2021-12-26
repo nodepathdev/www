@@ -6,13 +6,9 @@ content_blocks:
       - heading_html: <h2>Graduate from a spreadsheet</h2>
         content_html: >-
           <p>Nodepath is the intuitive way to remember your connections.</p>
+          <p><a href="#waiting-list">Join the waiting list</a></p>
         image: /images/taking-notes.svg
         content_arrangement: Left
-        button:
-          button_label: Join the waiting list
-          Button_link_url:
-          button_variant: Filled
-          _branded: true
     component_theme: Light
   - _bookshop_name: image-and-text-blocks
     blocks:
@@ -43,16 +39,24 @@ content_blocks:
           Build deeper connections by keeping track of emails, conversations, and favorite restaurants.
         icon_image: /images/svg/clipboard.svg
     component_theme: Light
-  - _bookshop_name: call-to-action-mailing-list
-    heading: Coming Soon
-    lower_text: >-
-      Join the waiting list, to be notified as we build the best PRM for you.
-    form_submission_email:
-    submit_success_url: /contact-success/
+  - _bookshop_name: content
+    content_html: >-
+      <h2 id="waiting-list" class="align-to-center">Join the waiting list</h2>
+
+      <iframe
+        style="max-width:375px; margin: 0 auto; display: block;"
+        src="https://tally.so/embed/wbvO6w?alignLeft=1&hideTitle=1&transparentBackground=1"
+        width="100%"
+        height="210"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="null">
+      </iframe>
     component_theme: Dark
 SEO_options:
   title: Nodepath - The personal relationship manager
-  description: Nodepath is the intuitive way to navigate your professional network
+  description: Nodepath is the intuitive way to remember your professional network
   image:
   prevent_indexing: false
 ---
