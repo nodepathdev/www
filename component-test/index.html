@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Nodepath</title>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Nodepath">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="/component-test/">
+    <meta name="twitter:card" content="">
+    <meta property="og:site_name" content="Nodepath">
+    <meta name="twitter:image:alt" content="">
+    <meta property="twitter:title" content="Component Test">
+    <meta name="twitter:site" content="">
+    <link rel="canonical" href="/">
+
+    <link rel="stylesheet" href="/assets/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16" />
+
+    <link rel="apple-touch-icon" sizes="128x128" href="/images/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="/images/icons/android-chrome-512x512.png">
+    <link rel="icon" sizes="128x128" href="/images/icons/apple-touch-icon.png" />
+    <link rel="icon" sizes="256x256" href="/images/icons/android-chrome-512x512.png" />
+
+    
+        
+        
+        <link rel="stylesheet" 
+              href="//fonts.googleapis.com/css?family=Public+Sans|Public+Sans:400,400i,700,700i">
+        
+    
+</head>
+  <body>
+    <div class="body-wrapper">
+      
+
+
+<div id="js-nav"
+	 class="c-navigation
+	 		"
+	 >
+	<div class="c-navigation__inner-wrapper">
+		
+			<a href="/">
+				<img class="logo" src="/images/nav-logo.svg" alt="Nodepath" />
+			</a>
+		
+		<h1 class="c-navigation__title"><a href="/">Nodepath</a></h1>
+		<ul class="c-navigation__nav-items">
+			
+				<li class="c-navigation__item-wrapper">
+					<a class="c-navigation__item
+							  c-navigation__item--
+							  "
+					   href="">
+					   <span class="c-navigation__label"></span>
+					</a>
+				</li>
+			
+
+			<li class="c-navigation__item-wrapper c-navigation__item-wrapper--mobile">
+				<a id="js-mobile-toggle"
+				   class="c-navigation__item
+						  c-navigation__item--mobile-toggle"
+				   href="#">
+				   <span class="c-navigation__label">☰</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<script>
+	const navToggle = document.getElementById('js-mobile-toggle');
+	const nav = document.getElementById('js-nav');
+
+	function toggleNav() {
+		nav.classList.toggle('c-navigation--open');
+	}
+
+	navToggle.addEventListener('click', toggleNav);
+</script>
+
+      <!--
+            A data-bookshop-live enables live editing previews in CloudCannon.
+            To enable live previews of new components, we render all components
+            via a page component that expects an array of content blocks.
+
+            data-bookshop-props is used to control what front matter to bind to.
+            Here we want to bind to all the front matter, so that page.content_blocks
+            is accessible from the bookshop renderer.
+
+            This element will get picked up by the bookshop dev renderer if present,
+            on production this does nothing.
+        -->
+      <div data-bookshop-live="page" data-bookshop-props="page">
+        <!--
+                Bookshop components are accessed using the bookshop tag,
+                using the same syntax as the standard Jekyll include tag.
+            -->
+
+        <!--bookshop-live name(page/page.jekyll.html) params(content_blocks=page.content_blocks
+        page_theme=page.page_theme) context() -->
+          
+    <div class="c-page theme-dark">
+
+    
+    
+        
+        <div class="c-staff-list 
+                    component-wrapper
+                    
+                        component-wrapper--light
+                    ">
+            <!--bookshop-live name(staff-list/staff-list.jekyll.html) params(bind=block) context(block=content_blocks[0]) -->
+          
+	<div class="c-staff-list__inner-wrapper
+				component">
+		<h2 class="c-staff-list__heading"></h2>
+		<p class="c-staff-list__subheading"></p>
+		<div class="c-staff-list__staff">
+			
+				<div class="c-staff-list__staff-card">
+					<img class="c-staff-list__staff-image" 
+						 src="https://source.unsplash.com/collection/139386/602x602?a=.png"
+						 alt="Betty Jefferson" />
+					<h4 class="c-staff-list__name">
+						<a href="https://twitter.com/cloudcannon">Betty Jefferson</a>
+					</h4>
+					<p class="c-staff-list__position">LLB</p>
+				</div>
+			
+		</div>
+	</div>
+
+
+          <!--bookshop-live end-->
+        </div>
+        
+    
+        
+        <div class="c-map 
+                    component-wrapper
+                    
+                        component-wrapper--light
+                    ">
+            <!--bookshop-live name(map/map.jekyll.html) params(bind=block) context(block=content_blocks[1]) -->
+          <div class="c-map__inner-wrapper">
+	<div class="c-map__map" id="map"></div>
+	<script type="text/javascript">
+
+		window.mapData = {"latitude": -45.8779128,"longitude": 170.5026709, "zoom": 13};
+
+		function initMap() {
+			var myOptions = {
+				scrollwheel: false,
+				draggable: false,
+				panControl: false,
+				disableDefaultUI: true,
+				styles: [{
+					"featureType": "all",
+					"elementType": "labels.text.fill",
+					"stylers": [{
+						"saturation": 36
+					}, {
+						"color": "#000000"
+					}, {
+						"lightness": 40
+					}]
+				}, {
+					"featureType": "all",
+					"elementType": "labels.text.stroke",
+					"stylers": [{
+						"visibility": "on"
+					}, {
+						"color": "#000000"
+					}, {
+						"lightness": 16
+					}]
+				}, {
+					"featureType": "all",
+					"elementType": "labels.icon",
+					"stylers": [{
+						"visibility": "off"
+					}]
+				}, {
+					"featureType": "administrative",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#000000"
+					}, {
+						"lightness": 20
+					}]
+				}, {
+					"featureType": "administrative",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#000000"
+					}, {
+						"lightness": 17
+					}, {
+						"weight": 1.2
+					}]
+				}, {
+					"featureType": "landscape",
+					"elementType": "geometry",
+					"stylers": [{
+						"color": "#000000"
+					}, {
+						"lightness": 20
+					}]
+				}, {
+					"featureType": "poi",
+					"elementType": "geometry",
+					"stylers": [{
+						"color": "#000000"
+					}, {
+						"lightness": 21
+					}]
+				}, {
+					"featureType": "road.highway",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"color": "#000000"
+					}, {
+						"lightness": 17
+					}]
+				}, {
+					"featureType": "road.highway",
+					"elementType": "geometry.stroke",
+					"stylers": [{
+						"color": "#000000"
+					}, {
+						"lightness": 29
+					}, {
+						"weight": 0.2
+					}]
+				}, {
+					"featureType": "road.arterial",
+					"elementType": "geometry",
+					"stylers": [{
+						"color": "#000000"
+					}, {
+						"lightness": 18
+					}]
+				}, {
+					"featureType": "road.local",
+					"elementType": "geometry",
+					"stylers": [{
+						"color": "#000000"
+					}, {
+						"lightness": 16
+					}]
+				}, {
+					"featureType": "transit",
+					"elementType": "geometry",
+					"stylers": [{
+						"color": "#000000"
+					}, {
+						"lightness": 19
+					}]
+				}, {
+					"featureType": "water",
+					"elementType": "geometry",
+					"stylers": [{
+						"color": "#000000"
+					}, {
+						"lightness": 17
+					}]
+				}],
+				zoom: window.mapData.zoom,
+				maxZoom: window.mapData.zoom,
+				minZoom: window.mapData.zoom,
+				center: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude),
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			map = new google.maps.Map(document.getElementById("map"), myOptions);
+			marker = new google.maps.Marker({
+				map: map,
+				position: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude)
+			});
+
+			google.maps.event.addDomListener(window, "resize", function () {
+				map.setCenter(myOptions.center);
+			});
+		}
+	</script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=&amp;callback=initMap"></script>
+</div>
+          <!--bookshop-live end-->
+        </div>
+        
+    
+        
+        <div class="c-reviews 
+                    component-wrapper
+                    
+                        component-wrapper--light
+                    ">
+            <!--bookshop-live name(reviews/reviews.jekyll.html) params(bind=block) context(block=content_blocks[2]) -->
+          <div class="c-reviews__inner-wrapper
+			component">
+	<div class="c-reviews__content-wrapper">
+		
+			<h2 class="c-reviews__heading">Reviews</h2>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="c-reviews__reviews">
+		
+			<div class="c-reviews__review">
+				<div class="c-reviews__review-content">
+					<p>Text</p>
+				</div>
+				<div class="c-reviews__review-name">
+					<img src="/images/sheep.jpg" alt="Reviewer" /><span>Reviewer</span>
+				</div>
+			</div>
+		
+			<div class="c-reviews__review">
+				<div class="c-reviews__review-content">
+					<p>Text</p>
+				</div>
+				<div class="c-reviews__review-name">
+					<img src="/images/sheep.jpg" alt="Reviewer" /><span>Reviewer</span>
+				</div>
+			</div>
+		
+			<div class="c-reviews__review">
+				<div class="c-reviews__review-content">
+					<p>Text</p>
+				</div>
+				<div class="c-reviews__review-name">
+					<img src="/images/sheep.jpg" alt="Reviewer" /><span>Reviewer</span>
+				</div>
+			</div>
+		
+	</div>
+</div>
+          <!--bookshop-live end-->
+        </div>
+        
+    
+        
+        <div class="c-quote 
+                    component-wrapper
+                    
+                        component-wrapper--light
+                    ">
+            <!--bookshop-live name(quote/quote.jekyll.html) params(bind=block) context(block=content_blocks[3]) -->
+          <div class="c-quote__inner-wrapper
+			component">
+	<div class="c-quote__image-wrapper">
+		<img src="/images/sheep.jpg" alt="Name" />
+		<p class="c-quote__quote-details c-quote__quote-details--alternate">Name - Role</p>
+	</div>
+	<div class="c-quote__content-wrapper">
+		<p class="c-quote__quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p class="c-quote__quote-details">Name - Role</p>
+	</div>
+</div>
+          <!--bookshop-live end-->
+        </div>
+        
+    
+        
+        <div class="c-contact-form 
+                    component-wrapper
+                    
+                        component-wrapper--light
+                    ">
+            <!--bookshop-live name(contact-form/contact-form.jekyll.html) params(bind=block) context(block=content_blocks[4]) -->
+          <div class="c-contact-form__inner-wrapper
+			component">
+	
+	
+		<h2 class="c-contact-form__main-heading">Contact Form</h2>
+	
+	
+	
+		<p class="c-contact-form__lower-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	
+
+	<div class="c-contact-form__form-wrapper">
+		<form class="c-contact-form__form"
+			  action="/contact-success/" 
+			  method="post">
+			<input type="hidden" 
+				   name="_to" 
+				   value="test@test.com" />
+			<input type="text" 
+				   name="_gotcha" 
+				   style="display: none;">
+
+			<label for="name">Full Name</label>
+			<input type="text" 
+				   name="name" id="name" 
+				   placeholder="Enter your name..." />
+
+			<label for="email">Email Address</label>
+			<input type="email" 
+				   name="email" 
+				   id="email" 
+				   placeholder="Enter your email..." 
+				   required />
+
+			<label for="message">Message</label>
+			<textarea name="message" 
+				   id="message" 
+				   placeholder="Enter your message..."></textarea>
+			<!--bookshop-live name(button/button.jekyll.html) params(label='Send Message'
+						variant='Filled'
+						submit=true) context() -->
+          
+
+
+
+	
+	<div class="n-button
+				n-button--filled">
+		<input class="n-button__label"
+			   type="submit" 
+			   value="Send Message" />
+	</div>
+
+          <!--bookshop-live end-->
+		</form>
+		<div class="c-contact-form__details">
+			
+			
+				<h3 class="c-contact-form__heading">Address</h3>
+				<address class="c-contact-form__detail">
+					<a target="_blank" 
+					   href="https://www.google.com/maps/place/Address">Address</a>
+				</address>
+			
+
+			
+			
+				<h3 class="c-contact-form__heading">Postal Address</h3>
+				<address class="c-contact-form__detail">
+					<a target="_blank" 
+					   href="https://www.google.com/maps/place/Address">Address</a>
+				</address>
+			
+
+			
+			
+				<h3 class="c-contact-form__heading">Email Address</h3>
+				<p class="c-contact-form__detail c-contact-form__detail--no-margin">
+					<a href="mailto:Email">Email</a>
+				</p>
+			
+
+			
+			
+				<h3 class="c-contact-form__heading">Phone Number</h3>
+				<p class="c-contact-form__detail c-contact-form__detail--no-margin">
+					<a href="tel:Number">Number</a>
+				</p>
+			
+		</div>
+	</div>
+</div>
+
+          <!--bookshop-live end-->
+        </div>
+        
+    
+        
+        <div class="c-contact-cards 
+                    component-wrapper
+                    
+                        component-wrapper--light
+                    ">
+            <!--bookshop-live name(contact-cards/contact-cards.jekyll.html) params(bind=block) context(block=content_blocks[5]) -->
+          <div class="c-contact-cards__inner-wrapper
+			component">
+	<div class="c-contact-cards__content">
+		<h2>Contact Cards</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="c-contact-cards__cards">
+		
+			<div class="c-contact-cards__card">
+				<div class="c-contact-cards__details-wrapper">
+					<img src="/images/sheep.jpg" alt="Name" />
+					<div class="c-contact-cards__details">
+						<h3 class="c-contact-cards__name">Name</h3>
+						<p class="c-contact-cards__role">Role</p>
+						<p class="c-contact-cards__number">
+							<a href="tel:16549879">16549879</a> ext 1
+						</p>
+					</div>
+				</div>
+				<p class="c-contact-cards__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		
+			<div class="c-contact-cards__card">
+				<div class="c-contact-cards__details-wrapper">
+					<img src="/images/sheep.jpg" alt="Name" />
+					<div class="c-contact-cards__details">
+						<h3 class="c-contact-cards__name">Name</h3>
+						<p class="c-contact-cards__role">Role</p>
+						<p class="c-contact-cards__number">
+							<a href="tel:16549879">16549879</a> ext 1
+						</p>
+					</div>
+				</div>
+				<p class="c-contact-cards__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		
+			<div class="c-contact-cards__card">
+				<div class="c-contact-cards__details-wrapper">
+					<img src="/images/sheep.jpg" alt="Name" />
+					<div class="c-contact-cards__details">
+						<h3 class="c-contact-cards__name">Name</h3>
+						<p class="c-contact-cards__role">Role</p>
+						<p class="c-contact-cards__number">
+							<a href="tel:16549879">16549879</a> ext 1
+						</p>
+					</div>
+				</div>
+				<p class="c-contact-cards__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		
+	</div>
+</div>
+
+          <!--bookshop-live end-->
+        </div>
+        
+    
+        
+        <div class="c-image-and-text-blocks 
+                    component-wrapper
+                    
+                        component-wrapper--light
+                    ">
+            <!--bookshop-live name(image-and-text-blocks/image-and-text-blocks.jekyll.html) params(bind=block) context(block=content_blocks[6]) -->
+          <div class="c-image-and-text-blocks__inner-wrapper
+			component">
+	
+		<div class="c-image-and-text-blocks__block
+					c-image-and-text-blocks__block--right">
+			<div class="c-image-and-text-blocks__content-wrapper">
+				<div class="c-image-and-text-blocks__heading">
+					<p>Heading</p>
+				</div>
+				<div class="c-image-and-text-blocks__content">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					
+						<!--bookshop-live name(button/button.jekyll.html) params(label=block.button.button_label
+									variant=block.button.button_variant
+									link_url=block.button.button_link_url) context(block=blocks[0]) -->
+          
+
+
+
+	<a class="n-button
+			  n-button--transparent"
+		href="/"
+		>
+		<span class="n-button__label">Button Transparent</span>
+	</a>
+
+          <!--bookshop-live end-->
+					
+				</div>
+			</div>
+			<div class="c-image-and-text-blocks__image-wrapper">
+				<img src="/images/sheep.jpg" alt="Heading" />
+			</div>
+		</div>
+	
+		<div class="c-image-and-text-blocks__block
+					c-image-and-text-blocks__block--left">
+			<div class="c-image-and-text-blocks__content-wrapper">
+				<div class="c-image-and-text-blocks__heading">
+					<p>Heading</p>
+				</div>
+				<div class="c-image-and-text-blocks__content">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					
+						<!--bookshop-live name(button/button.jekyll.html) params(label=block.button.button_label
+									variant=block.button.button_variant
+									link_url=block.button.button_link_url) context(block=blocks[1]) -->
+          
+
+
+
+	<a class="n-button
+			  n-button--filled"
+		href="/"
+		>
+		<span class="n-button__label">Button Filled</span>
+	</a>
+
+          <!--bookshop-live end-->
+					
+				</div>
+			</div>
+			<div class="c-image-and-text-blocks__image-wrapper">
+				<img src="/images/sheep.jpg" alt="Heading" />
+			</div>
+		</div>
+	
+</div>
+          <!--bookshop-live end-->
+        </div>
+        
+    
+        
+        <div class="c-header-with-image 
+                    component-wrapper
+                    
+                        component-wrapper--light
+                    ">
+            <!--bookshop-live name(header-with-image/header-with-image.jekyll.html) params(bind=block) context(block=content_blocks[7]) -->
+          <div class="c-header-with-image__inner-wrapper
+			c-header-with-image__inner-wrapper--center
+			component">
+	<div class="c-header-with-image__content-wrapper">
+		<div class="c-header-with-image__heading"
+			 style="color: #e97474"><p>Header with image</p></div>
+		<div class="c-header-with-image__subheading"
+			 style="color: #e97474"><p>Subheading</p></div>
+		
+			<!--bookshop-live name(button/button.jekyll.html) params(label=include.button_label
+						variant=include.button_variant
+						link_url=include.button_link_url) context() -->
+          
+
+
+
+	<a class="n-button
+			  n-button--filled"
+		href="/"
+		>
+		<span class="n-button__label">Button</span>
+	</a>
+
+          <!--bookshop-live end-->
+		
+	</div>
+	
+		<div class="c-header-with-image__image-wrapper">
+			<img src="/images/sheep.jpg" alt="" />
+		</div>
+	
+</div>
+          <!--bookshop-live end-->
+        </div>
+        
+    
+
+    </div>
+
+          <!--bookshop-live end-->
+      </div>
+       
+
+<div class="c-footer">
+	<div class="c-footer__columns">
+		
+	</div>
+	<div class="c-footer__lower-text">
+		<p style="padding-bottom:1.5rem">&copy; NodePath</p>
+	</div>
+</div>
+
+      <!-- <div class="dark-mode-toggle">
+            <a id="js-dark-mode"
+               class="n-button">
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48zM12 6v12c3.31 0 6-2.69 6-6s-2.69-6-6-6z"/></svg> <span id="js-mode-label">Dark Mode</span>
+            </a>
+        </div> -->
+      <!-- <script type="text/javascript" src="/assets/js/dark-mode.js"></script> -->
+
+      <!--
+            live component for CloudCannon live previews.
+        -->
+      <script>
+(function(){
+  const bookshopLiveSetup = (CloudCannon) => {
+    CloudCannon.enableEvents();
+
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
+    script.src = `/_cloudcannon/bookshop-live.js`;
+    script.onload = function() {
+      window.bookshopLive = new window.BookshopLive({
+        remoteGlobals: ['/_cloudcannon/bookshop-site-data.json']
+      });
+      const updateBookshopLive = async () => {
+        const frontMatter = await CloudCannon.value();
+        const options = window.bookshopLiveOptions || {};
+        await window.bookshopLive.update({page: frontMatter}, options);
+        CloudCannon?.refreshInterface?.();
+      }
+      document.addEventListener('cloudcannon:update', updateBookshopLive);
+      updateBookshopLive();
+    }
+    head.appendChild(script);
+  }
+
+  document.addEventListener('cloudcannon:load', function (e) {
+    bookshopLiveSetup(e.detail.CloudCannon);
+  });
+})();
+</script>
+    </div>
+    
+    <script
+      data-host="https://microanalytics.io"
+      data-dnt="false"
+      src="https://microanalytics.io/js/script.js"
+      id="ZwSg9rf6GA"
+      async
+      defer
+    ></script>
+    
+  </body>
+</html>
